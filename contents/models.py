@@ -35,5 +35,13 @@ class Shorts(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
 
+    @property
+    def formatted_views(self):
+        if self.views_count >= 1000000:
+            return f"{self.views_count / 1000000:.1f}M"
+        elif self.views_count >= 1000:
+            return f"{self.views_count / 1000:.1f}K"
+        return str(self.views_count)
+
     def __str__ (self):
         return self.title
