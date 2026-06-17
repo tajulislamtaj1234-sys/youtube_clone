@@ -18,6 +18,14 @@ class Video_Content(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
 
+    @property
+    def formatted_views(self):
+        if self.views_count >= 1000000:
+            return f"{self.views_count / 1000000:.1f}M"
+        elif self.views_count >= 1000:
+            return f"{self.views_count / 1000:.1f}K"
+        return str(self.views_count)
+
 class Shorts(models.Model):
     title=models.CharField(max_length=255)
     thumbnail=models.URLField()
