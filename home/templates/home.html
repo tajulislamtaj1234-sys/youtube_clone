@@ -77,22 +77,31 @@
     {% for short in shorts %}
     <div class="short-card">
 
+        <!-- Top 80% -->
         <div class="short-thumbnail">
             <img src="{{ short.thumbnail }}" alt="{{ short.title }}">
         </div>
 
-        <div class="short-info">
+        <!-- Bottom 20% -->
+        <div class="short-bottom">
 
-            <h3>{{ short.title }}</h3>
+            <!-- Left 80% -->
+            <div class="short-details">
 
-            <div class="channel-row">
-                <span>{{ short.channel.name }}</span>
+                <h3 class="short-title">
+                    {{ short.title }}
+                </h3>
+
+                <p class="short-views">
+                    {{ short.formatted_views }} views
+                </p>
+
             </div>
 
-            <p>
-                {{ short.formatted_views}} views •
-                {{ short.created_at|timesince}} ago
-            </p>
+            <!-- Right 20% -->
+            <div class="short-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
 
         </div>
 
