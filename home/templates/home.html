@@ -1,0 +1,133 @@
+
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'main/css/home/home.css' %}">
+{% endblock %}
+{% block content %}
+<!-- Top Section -->
+    <div class="top-section">
+
+        <!-- Scrollable Category Area -->
+        <div class="scrollable-area">
+
+            {%for name in tag_names%}
+            <button>{{name.titles}}</button>
+            {% endfor %}
+
+        </div>
+        
+<h2 class="section-title">recomended videos</h2>
+        <!-- Recommended Videos -->
+<div class="recommended-videos">
+
+ {% for video in videos %}
+<div class="video-card">
+
+    <div class="thumbnail">
+        <img src="{{ video.thumbnail }}" alt="{{ video.title }}">
+    </div>
+
+    <div class="video-info">
+
+        <!-- Title -->
+        <h3>{{ video.title }}</h3>
+
+        <!-- Channel -->
+        <div class="channel-row">
+            <div class="channel-logo">
+                <img src="https://placehold.co/40x40" alt="Channel">
+            </div>
+
+            <span>{{ video.channel.name }}</span>
+        </div>
+
+        <!-- Meta Info -->
+        <p>{{ video.views_count }} views • {{ video.created_at|timesince }} ago</p>
+
+    </div>
+ </div>
+ {% endfor %}
+</div>
+
+  <!-- Shorts Title -->
+<div class="shorts-header">
+
+    <div class="shorts-left">
+
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="m19.45,3.88c1.12,1.82.48,4.15-1.42,5.22l-1.32.74.94.41c1.36.58,2.27,1.85,2.35,3.27.08,1.43-.68,2.77-1.97,3.49l-8,4.47c-1.91,1.06-4.35.46-5.48-1.35-1.12-1.82-.48-4.15,1.42-5.22l1.33-.74-.94-.41c-1.36-.58-2.27-1.85-2.35-3.27-.08-1.43.68-2.77,1.97-3.49l8-4.47c1.91-1.06,4.35-.46,5.48,1.35Z" fill="#ff0033"/>
+            <path d="m10,15l5-3-5-3v6Z" fill="#fff"/>
+        </svg>
+
+        <h2>Shorts</h2>
+
+    </div>
+
+    <div class="shorts-menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+
+</div>
+
+<div class="shorts">
+
+    {% for short in shorts %}
+    <div class="short-card">
+
+        <div class="short-thumbnail">
+            <img src="{{ short.thumbnail }}" alt="{{ short.title }}">
+        </div>
+
+        <div class="short-info">
+
+            <h3>{{ short.title }}</h3>
+
+            <div class="channel-row">
+                <span>{{ short.channel.name }}</span>
+            </div>
+
+            <p>
+                {{ short.views_count }} views •
+                {{ short.created_at|timesince }} ago
+            </p>
+
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+        
+
+<h2 class="section-title">Playlist</h2>
+
+<div class="playlist">
+
+    <div class="video-card large-card"></div>
+    <div class="video-card large-card"></div>
+    <div class="video-card large-card"></div>
+
+
+</div>
+
+       <!-- Shorts Title -->
+<h2 class="section-title">other videos</h2>
+
+<!-- Other Videos -->
+<div class="other-videos">
+
+    <div class="video-card short-card"></div>
+    <div class="video-card short-card"></div>
+    <div class="video-card short-card"></div>
+    <div class="video-card short-card"></div>
+    <div class="video-card short-card"></div>
+
+</div>
+
+
+</body>
+</html>
+{% endblock %}

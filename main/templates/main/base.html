@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Template</title>
+
+    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'main/css/topbar.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li>Home</li>
+            <li>Dashboard</li>
+            
+            <li>settings</li>
+            
+        </ul>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+
+        <!-- Left Section -->
+        <div class="left-section">
+
+    <div class="topbar-left">
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            YouTube<span>Clone</span>
+        </div>
+    </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+
+            <div class="icon-box create-box">
+                <i class="fa-solid fa-plus"></i>
+                <span>Create</span>
+            </div>
+
+            <div class="bell-icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+
+            <div class="profile-circle"></div>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
