@@ -6,7 +6,7 @@
     height: 70px;
     width: 100%;
 
-    background: #ffffff;
+    background: #6b7fb5;
 
     display: flex;
     justify-content: space-between;
@@ -92,7 +92,7 @@
 
     height: 45px;
 
-    background: #f5f6f8;
+    background: #ffffff;
 
     border-radius: 30px;
 
@@ -194,4 +194,82 @@
     font-weight: 600;
 
     cursor: pointer;
+}
+
+/* Profile Wrapper */
+.profile-wrapper{
+    position: relative;
+}
+
+/* Profile Circle */
+.profile-circle{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #4f8ef7;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Dropdown */
+.profile-dropdown{
+    position: absolute;
+
+    top: 55px;
+    right: 0;
+
+    width: 220px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+    overflow: hidden;
+
+    display: none;
+
+    z-index: 999;
+}
+
+/* Show Dropdown */
+.profile-dropdown.active{
+    display: block;
+}
+
+/* Menu Items */
+.profile-dropdown a{
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.profile-dropdown a:hover{
+    background: #f5f5f5;
+}
+
+.profile-dropdown i{
+    width: 18px;
 }

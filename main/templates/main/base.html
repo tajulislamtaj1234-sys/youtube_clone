@@ -7,76 +7,120 @@
     <title>Base Template</title>
 
     <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
-    
     <link rel="stylesheet" href="{% static 'main/css/topbar.css' %}">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <h3>Menu</h3>
+
         <ul>
             <li>Home</li>
             <li>Dashboard</li>
-            
-            <li>settings</li>
-            
+            <li>Settings</li>
         </ul>
     </div>
 
     <!-- Main -->
     <div class="main">
 
-    <!-- Topbar -->
-    <div class="topbar">
+        <!-- Topbar -->
+        <div class="topbar">
 
-        <!-- Left Section -->
-        <div class="left-section">
+            <!-- Left Section -->
+            <div class="left-section">
 
-    <div class="topbar-left">
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+                <div class="topbar-left">
 
-        <div class="logo">
-            YouTube<span>Clone</span>
-        </div>
-    </div>
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
 
-            <!-- Search Bar -->
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="logo">
+                        YouTube<span>Clone</span>
+                    </div>
+
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+
+                <div class="icon-box create-box">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Create</span>
+                </div>
+
+                <div class="bell-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-wrapper">
+
+                    <div class="profile-circle" id="profileBtn">
+                        T
+                    </div>
+
+                    <div class="profile-dropdown" id="profileMenu">
+
+                        <a href="#">
+                            <i class="fa-solid fa-user"></i>
+                            My Profile
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-solid fa-video"></i>
+                            Your Channel
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            History
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- Right Section -->
-        <div class="right-section">
-
-            <div class="icon-box create-box">
-                <i class="fa-solid fa-plus"></i>
-                <span>Create</span>
-            </div>
-
-            <div class="bell-icon">
-                <i class="fa-regular fa-bell"></i>
-            </div>
-
-            <div class="profile-circle"></div>
-
+        <!-- Page Content -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
         </div>
 
     </div>
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <!-- JS should be loaded at the end of body -->
+    <script src="{% static 'main/js/profile.js' %}"></script>
 
-</div>
+</body>
+</html>

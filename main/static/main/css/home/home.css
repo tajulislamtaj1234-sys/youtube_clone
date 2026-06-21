@@ -191,8 +191,9 @@ body{
     transition: 0.3s;
 }
 
-.shorts-menu:hover{
-    background: #f1f3f4;
+.short-card:hover{
+    background: #fafafa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .shorts-menu i{
@@ -251,8 +252,8 @@ body{
 }
 
 .short-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: #6b7fb5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Top Part (80%) */
