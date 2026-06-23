@@ -10,13 +10,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 10%;
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-        }
+
 
         /* Main area */
         .main {
@@ -53,11 +47,19 @@ body{
 /* ===== Sidebar ===== */
 
 .sidebar{
-    width: 220px;
-    height: 100vh;
-    background-color: #2c3e50;
-    padding: 20px;
-    color: white;
+    width:220px;
+    height:100vh;
+
+    background-color:#2c3e50;
+    color:white;
+
+    padding:20px;
+
+    transition:all 0.3s ease;
+    overflow:hidden;
+}
+.sidebar.collapsed{
+    width:70px;
 }
 
 /* Sidebar Title */
@@ -65,7 +67,7 @@ body{
 .sidebar h3{
     font-size: 18px;
     margin-bottom: 25px;
-    text-align: center;
+     text-align: left;
 }
 
 /* Remove Dots */
@@ -77,12 +79,34 @@ body{
 /* Menu Items */
 
 .sidebar ul li{
-    font-size: 20px;          /* Reduced font size */
-    margin-bottom: 5px;      /* Space between menu items */
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    gap:10px;
+
+    font-size:12px;
+
+    padding:12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.sidebar ul li i{
+    min-width:20px;
+    font-size:15px;
+}
+
+.sidebar.collapsed ul li span{
+    display:none;
+}
+
+.sidebar.collapsed h3{
+    display:none;
 }
 
 /* Hover Effect */

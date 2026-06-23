@@ -18,15 +18,30 @@
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-        <h3>Menu</h3>
+    <div class="sidebar" id="sidebar">
 
-        <ul>
-            <li>Home</li>
-            <li>Dashboard</li>
-            <li>Settings</li>
-        </ul>
-    </div>
+    <h3>Menu</h3>
+
+    <ul>
+
+        <li>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-table-columns"></i>
+            <span>Dashboard</span>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </li>
+
+    </ul>
+
+</div>
 
     <!-- Main -->
     <div class="main">
@@ -39,7 +54,7 @@
 
                 <div class="topbar-left">
 
-                    <div class="menu-icon">
+                    <div class="menu-icon" id="menuToggle">
                         <i class="fa-solid fa-bars"></i>
                     </div>
 
@@ -120,6 +135,8 @@
     </div>
 
     <!-- JS should be loaded at the end of body -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'main/js/collaps.js' %}"></script>
     <script src="{% static 'main/js/profile.js' %}"></script>
 
 </body>
